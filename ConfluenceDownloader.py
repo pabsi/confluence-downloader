@@ -1,10 +1,10 @@
+#!/usr/bin/python
+
 # Confluence Downloader (modified)
 #
 # Original file found at: https://answers.atlassian.com/questions/114490/how-to-get-all-attachments-under-a-space-via-rest-api
 # Original autor: Adam Laskowski
 # 24th October 2013
-
-#!/usr/bin/python
 
 import sys, string, xmlrpclib, re, getpass, os
 
@@ -23,7 +23,7 @@ for pagedict in pagetree:
 	pagetitle = pagedict['title']
 	attachments = server.confluence2.getAttachments(token, pageid) # Creates another list of dicts
 	auxDict = {'id': pageid, 'title': pagetitle, 'attachments': attachments} # Adds attachment list to a temp dict
-	allattachments.append(auxDict) # Appends each new dict to the allattachments list 
+	allattachments.append(auxDict) # Appends each new dict to the allattachments list
 
 # Print the page title and all attachments and their file types from the first dict in the allattachments list
 for each in allattachments:
